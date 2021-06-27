@@ -1,0 +1,38 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>bootstrap form table</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'javascript/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Your details</h2>
+
+  <div class="table-responsive-sm">          
+  <table class="table table-bordered">
+    
+      <tr>
+        <th> name </th>
+        <th> gender </th>
+        <th> Lang Known</th>
+        <th> section </th>
+      </tr>
+      <tr>
+        <td>{{ name }}</td>
+        <td>{{gender}}</td>
+        <td>{{languagesKnown}}</td>
+        <td>{{abcdef}}</td>
+      </tr>
+    
+  </table>
+  </div>
+</div>
+
+</body>
+</html>

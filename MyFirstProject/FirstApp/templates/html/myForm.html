@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>regd form</title>
+</head>
+<body>
+
+	<form method="post" action="{% url 'registrationForm1' %}">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Regd Form</legend>
+			Name:<input type="text" name="uname" placeholder="enter user name"><br/>
+			Roll No:<input type="text" name="rollno" placeholder="ex:y18acs473"><br/>
+			Email:<input type="email" name="email" placeholder="ex:abc@gmail.com"><br/>
+			<input type="submit" name="submit" value="Submit">
+		</fieldset>
+	</form>
+</body>
+</html>

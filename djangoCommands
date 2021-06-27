@@ -1,0 +1,100 @@
+csrf cross site reference forgery
+- to create a project we have to run cmd i.e
+django-admin startproject projectname
+django-admin startapp WebSite
+-then run a cmd to run your project server
+		``` python manage.py runserver ```
+In Browser we need to pass the url as
+		=> http://127.0.0.1:8000
+		=> Local server => 127.0.0.1 => localhost
+		=> localhost:8000
+DTL:[Django Template Language]
+	==============================
+
+	Variable -> {{variablename}}
+
+	Conditional Statements:
+
+	{% if condition %}
+		//stmnts
+	{% endif %}
+
+
+	{% if condition %}
+		//stmnts
+	{% else %}
+		//stmnts
+	{% endif %}
+
+	{% if condition %}
+		//stmnts
+	{% elif condition %}
+		//stmnts
+	{% else %}
+		//stmnts
+	{% endif %}
+
+	Loops:
+	=====
+	{% for iterationvariable in iterator %}
+		//stmnts
+	{% endfor %}
+
+
+	url -> views -> Browser
+
+	url -> views -> template -> Browser
+
+	CSS3 Styling:
+	============
+		- Inline -> Within a tag
+		- Internal -> seperators,tag,id -> #,class -> . -> 
+		<style>
+		h2
+		{
+			property:value;
+			property1:value1;
+		}
+		</style> 
+		- External -> .css[External file => Link]
+
+	External:
+	=========
+	static
+		css -> styling
+		js -> validation
+		jquery -> action
+		images -> .extension
+
+	url -> views -> template -> views -> template
+
+	static 
+	{% load static %}
+
+	<link rel="stylesheet" href="{% static 'css/filename.extension' %}">
+to convert a models class to db table, we have to run 2 command in cmd prompt
+			- ``` python manage.py makemigrations ```
+for that we have to run a command
+				``` python manage.py migrate ```
+
+python manage.py shell
+from FirstApp.models import Register
+reg = Register(name = "ravi", email="ravi@gmail.com")
+				reg.save()
+				(or)
+				reg = Register.objects.create(name = "ravi", email="ravi@gmail.com")
+data = Register.objects.all()
+data = Register.objects.all()
+for row in data:
+	 print(row.email)
+info = Register.objects.filter(name="abdul")
+info = Regsiter.objects.get(id =1)
+info = Register.objects.all().first()
+info = Register.objects.all().last()
+info = Register.objects.all().[:2]
+info = Register.objects.get(name="ravikumar") 
+info.email = ravikumar@gmail.com
+info.save()
+info = Register.objects.get(name="ravi") 
+info.delete()
+Register.objects.all().delete()

@@ -1,0 +1,113 @@
+### Python Version
+- `python -V`
+---
+### pip version
+- `pip --version`
+---
+### django installation
+- `pip install django`
+---
+### for particular version
+- `pip install django == <version number>`
+---
+### uninstalling any package
+- `pip uninstall <package>`
+---
+### Django version check
+- `django-admin --version`
+---
+### create django project
+- `django-admin startproject <projectName>`
+- then we get a dirctory with our project name and in that another folder(admin app) with same name, db.sqlite3 and manage.py file
+---
+### project execution or Run
+- navigate to location of manage.py of your project
+`python manage.py runserver`
+- [http://127.0.0.1:8000/](http://127.0.0.1:8000/)     -> to open the output
+---
+### to stop server
+- `ctrl+c`
+---
+### to run on specified port
+- `django-admin manage.py runserver <1234/any port>`
+---
+### now admin app anatomy
+- \__init\__.py  
+> notifies python interpreter to consier as python file
+- asgi.py 
+> asynchronous gate way interface
+- wsgi.py 
+> web socket gate way interface
+- settings.py  
+> apd,db,mail,messages etc configurations
+- urls  
+> urls that we access are placed here
+---
+### now manage.py
+- startproject
+- runserver
+- startapp
+- shell
+- makemigrations
+- migrate
+- createsuperuser
+... and so on ...
+for full list use 
+- `manage.py`
+---
+### servers to host -aws/heuroku
+---
+### Creating UserApp
+`manage.py startapp <appname>`
+- an app(folder) with given name will be created
+---
+### here we get different configuration of files inside migrations folder in the app
+- \__init\__.py 
+> notifies python interpreter to consier as python file
+- admin.py 
+> database tables and fields views list
+- apps.py
+> app configurations
+- models.py
+> database fields,datatype,length(models)
+- tests.py
+> unit testing
+- views.py
+> logics
+
+### first step to run our apps
+- settings.py
+ ```
+ INSTALLEDAPP=[
+ 'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    `<'FirstApp '>`,]
+```
+
+### if you need to give your the below content in urls.py
+```from django.contrib import admin
+    from django.urls import path
+    from FirstApp import views
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('',views.home),
+    ]
+
+```
+syntax ` path('urlname/',modulename.functionname,name="userdefiened name"),`
+example: `path('',views.hello  ),`
+where
+- views is module i.e views.py in FirstApp
+- hello is function in views.py
+- hello function is as follows
+ ```from django.shortcuts import render
+    from django.http import HttpResponse
+    # Create your views here.
+    def home(request):
+        return HttpResponse("HelloWorld!! ")
+```

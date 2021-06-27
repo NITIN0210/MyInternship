@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Internal Java Script</title>
+	<script type="text/javascript" src="{% static 'js/MyScript.js' %}">
+		
+	</script>
+	<script type="text/javascript">
+		function generateMesg(){
+			alert("hello from internal JAVA SCRIPT");
+		}
+		
+	</script>
+</head>
+<body>
+
+	click this button to generate alert box using internal JAVA SCRIPT
+	<input type="button" name="button1" value="Click here" onclick="generateMesgInternal()">
+<br>
+	click this button to generate alert box using external JAVA SCRIPT
+	<input type="button" name="button2" value="Click here" onclick="generateMesgExternal()">
+
+</body>
+</html>

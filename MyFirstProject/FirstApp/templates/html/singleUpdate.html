@@ -1,0 +1,38 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>single update</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'javascript/bootstrap.min.js' %}"></script>
+	
+</head>
+<body>
+//<h2>{{row.id}},{{row.name}},{{row.email}}</h2>
+	<div class="container">
+		<div class="card mx-auto m-3">
+			<div class="card-body mx-auto">
+				<form method="post" >
+					{% csrf_token%}
+					<fieldset border="">
+						<legend>Single User Update</legend>
+						Name:<input type="text" name="name" class="form-control" value="{{row.name}}">
+						Email:<input type="email" name="email" class="form-control" value={{row.email}}>
+						<div class='row p-1'>
+							<div class="col-sm-6">
+								<a href="{%url 'displayReg'%}" class="btn btn-outline-secondary form-control">back</a>
+							</div>
+							<div class="col-sm-6">
+								<input type="submit" value="update" class="btn btn-outline-success form-control">
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

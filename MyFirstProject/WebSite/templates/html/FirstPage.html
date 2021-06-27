@@ -1,0 +1,14 @@
+{%load models%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FirstPage</title>
+</head>
+<body>
+
+	{%info=UserDate.objects.get(id=id)%}
+	{{info.fname}}
+
+</body>
+</html>

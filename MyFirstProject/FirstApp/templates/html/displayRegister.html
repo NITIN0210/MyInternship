@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'javascript/bootstrap.min.js' %}"></script>
+	<title>dbop response</title>
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="col-md-8">
+			<table  class=" table table-hover table-border col-md-6 mt-4">
+				<tr class="bg-dark text-center text-light">
+					<th>ID</th>
+					<th>name</th>
+					<th>email</th>
+					<th>actions</th>
+
+				</tr>
+				{% for row in data %}
+				<tr>
+					<td>{{row.id}}</td>
+					<td>{{row.name}}</td>
+					<td>{{row.email}}</td>
+					<td>
+						<a href="{% url 'singleView' row.id %}"  class="btn btn-outline-primary mx-2">view</a>
+						<a href="{% url 'singleUpdate' row.id %}"  class="btn btn-outline-success mx-2">update</a>
+						<a href="{% url 'singleDelete' row.id %}"  class="btn btn-outline-danger">delete</a>
+					</td>
+				</tr>	
+				{% endfor %}
+			</table>
+		</div>
+</div>
+</body>
+</html>
